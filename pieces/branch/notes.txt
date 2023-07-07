@@ -1,0 +1,31 @@
+--------------------
+--  PROGRAM NOTES --
+--------------------
+
+
+About the piece:
+----------------
+
+BRANCH is a piece which uses the Tidal Cycles
+live coding language alongside a tool we
+developed called SHARP. SHARP provides a
+tree-like structure embedded in the text editor
+which allows the performer to quickly switch
+between different versions of their code.
+With BRANCH, we try to highlight the interplay
+between musical form, its representation in
+SHARP, and the sonic material itself. To that
+end, BRANCH makes use of machine-generated
+speech based mostly on snippets from Robert
+Frost's poem "The Road Not Taken". The text
+is largely decontextualized, and its treatment
+is somewhat tongue-in-cheek: while the poem's
+premise centers around not being able to take
+both paths, we can easily explore as many
+paths in our code as we wish.
+
+
+Technical Details:
+------------------
+Language: Tidal Cycles
+IDE: Pulsar w/ our custom extension, SHARP
