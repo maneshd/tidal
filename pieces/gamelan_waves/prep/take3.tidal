@@ -1,0 +1,221 @@
+bpm x = do setcps (x / 60 / 4)
+
+bpm 80
+
+once $ s "ocean:3" # gain 1.2 # pan 0.7
+
+once $ s "ocean:3" # gain 1.2 # pan 0.3
+
+d2
+$ slow 4
+-- $ s "sgong:1 gong:4"
+$ s "sgong:1 sgong:1"
+# up "0 -6"
+# room 1.0
+# grain 0.05 2.0
+# legato 1.0
+
+xfade 3
+$ n "0"
+# s "KETHUK"
+# legato 0.5
+# gain (range 0.85 1.25 $ slow 8 sine)
+# pan (range 0.3 0.7 $ slow 7 sine)
+
+
+d1
+$ juxBy 0.8 (rev)
+$ superimpose (# up "12")
+$ often (# up "[-12,-7]")
+$ s "ocean:3*4"  -- 3*4
+# legato 0.9
+# grain (range 0.0 0.99 rand) 0.2  -- add (1)
+# gain (range 1.2 1.4 $ slow 8 sine)
+
+
+bpm 100
+
+d3
+$ slow 2
+$ n "0 0 0 . 0 0"
+# s "KETHUK"
+# legato 0.5
+# gain (range 1.0 1.25 $ slow 8 sine)
+# pan (range 0.3 0.7 $ slow 7 sine)
+
+d1
+$ juxBy 0.8 (rev)
+$ superimpose (# up "12")
+$ often (# up "[-12,-7]")  -- add (3)
+$ s "ocean:3*<[3|6] [2|4|8]>"
+# legato 0.9
+# grain (range 0.0 0.99 rand) 0.2  -- add (1)
+# gain (range 1.2 1.4 $ slow 8 sine)
+
+
+d1
+$ juxBy 0.8 (rev)
+$ superimpose (# up "12")
+$ often (# up "[-12,-7]")  -- add (3)
+$ s "ocean:3*<[4|8|12] [3|6]>"
+# legato 0.9
+# grain (range 0.0 0.99 rand) 0.2  -- add (1)
+# gain (range 1.2 1.4 $ slow 8 sine)
+
+
+d4
+-- $ sometimes (superimpose (# up "-12"))
+-- $ often (fast "[2|3|6]")
+$ n "[1|2|3|4|5]"  -- How to make this change every 7th 8th note?
+# s "demung"
+# legato 1.1
+# gain (range 0.7 0.9 $ slow 12 sine)
+# pan (range 0.35 0.65 $ segment 16 rand)
+
+-- Eh.. This can probably be revamped.
+-- Maybe: write some actually good melodic fragments here.
+-- OR: hook it up to a keyboard so you can do it yourself lol.
+d5
+$ jux rev
+$ n "[[1 1]|[3 3]] ~ ~  . ~ . ~ . ~"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.4 0.9 $ slow 8 sine)
+
+
+d5
+-- $ n "{[4|5|6] ~}%4"  -- > start
+-- $ n "{4 3 2 [4|5|6] ~}%12"  -- > go here?
+$ n "{4 3 2 [4|5|6] ~}%24"  -- > go here?
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.4 0.9 $ slow 8 sine)
+
+d5 $ silence
+
+
+-- Cut the melody, bring the speed up, go into 4/4?
+-- i.e., MUST do the following at once...
+
+d4 $ silence
+
+d3
+$ slow 2
+$ n "0 0 0 0"
+# s "KETHUK"
+# legato 0.5
+# gain (range 1.0 1.25 $ slow 8 sine)
+# pan (range 0.3 0.7 $ slow 7 sine)
+
+d1
+$ juxBy 0.8 (rev)
+$ superimpose (# up "12")
+$ often (# up "[-12,-7]")  -- add (3)
+$ s "ocean:3*8"
+# legato 0.9
+# grain (range 0.0 0.99 rand) 0.2  -- add (1)
+# gain (range 1.2 1.4 $ slow 8 sine)
+
+bpm 160
+
+
+-- Drumbs
+d6
+-- $ sometimes (ply "[2]")
+$ outside 4 (juxBy 0.8 rev)
+$ degradeBy 0.2
+$ slow 4
+$ loopFirst -- Take it or leave it?
+$ n (fast 4 $ scramble 8 $ run 8)
+# s "kendhang"
+# pan (range 0.2 0.8 $ rand)
+
+bpm 168
+
+d1
+$ rarely ((# distort 4.0) . (# gain 0.8)) -- -> rarely to often
+$ juxBy 0.8 (rev)
+$ superimpose (# up "12")
+$ often (# up "[-12,-7]")  -- add (3)
+$ s "ocean:3*8"
+# legato 0.9
+# grain (range 0.0 0.99 rand) 0.2  -- add (1)
+# gain (range 1.2 1.4 $ slow 8 sine)
+
+
+-- TODO: figure out something much better than this
+d5
+$ sometimes (# squiz 2)
+$ slow 4
+$ n "1 . 4 . 2 . [5] ~ ~ ~"  -- > go here?
+# s "[saron,ssaron]"
+# legato 1.0
+
+
+d6
+$ sometimes ((# distort 1.0) . (# gain 1.0))
+$ outside 4 (juxBy 0.8 rev)
+$ degradeBy 0.2
+$ slow 4
+$ loopFirst -- Take it or leave it?
+$ n (fast 4 $ scramble 8 $ run 8)
+# s "kendhang"
+# pan (range 0.2 0.8 $ rand)
+
+
+d7
+$ jux rev
+$ n "[[1 1]|[3 3]] ~ ~  . ~ . ~ . ~"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.4 0.9 $ slow 8 sine)
+# distort 1.0
+
+
+d2
+$ slow 4
+-- $ s "sgong:1 gong:4"
+$ s "sgong:1 sgong:1"
+# up "0 -6"
+# room 1.0
+# grain 0.05 2.0
+# legato 1.0
+# squiz 4.0
+# gain 0.9
+
+
+-- TODO: figure out how to transition lol.
+
+-- Wind down --
+d1
+$ juxBy 0.8 (rev)
+-- $ often ((# distort 1.0) . (# gain 1.0))
+$ superimpose (# up "12")
+$ often (# up "[-12,-7]")  -- add (3)
+$ s "ocean:3*1"  -- 8, 4
+# legato 0.9
+# grain (range 0.0 0.99 rand) 0.2  -- add (1)
+# gain 1.4
+
+d2
+$ slow 8
+-- $ s "sgong:1 gong:4"
+$ s "sgong:1 sgong:1"
+# up "0 -6"
+# room 1.0
+# grain 0.05 2.0
+# legato 1.0
+
+
+d1 $ silence
+
+once $ "ocean:3"
+
+d2
+$ slow 8
+-- $ s "sgong:1 gong:4"
+$ s "sgong:1"
+# up "-6"
+# room 1.0
+# grain 0.05 2.0
+# legato 1.0

@@ -1,0 +1,48 @@
+bpm x = do setcps (x / 60 / 4)
+
+bpm 70
+
+d1
+$ slow 4
+$ stack [
+  n "a3" # velocity 0.5,
+  n "~ a2 . ~" # velocity 0.2,
+  n "~ d2 . ~" # velocity 0.2,
+  n "~ fs3 . ~" # velocity 0.3,
+  n "~ c4 . ~" # velocity 0.3,
+  n "~ ~ ~ [~ a2] . ~" # velocity 0.2,
+  n "~ . [ef4,ef5]?0.2" # velocity 0.3
+]
+# sound "superpiano"
+# sustain 8.0
+# gain 1.1
+# vowel "<a e i o u>"
+
+
+d2
+$ slow 10
+$ n "d'm'4 a'm'4 c'M'4 e'm'4 . d'm'4 g'm'4 c'M'4 a'm'4 . d'm'4 a'm'4 g'm'4 d'm'4 . ef'M'4 af'M'4 gf'M'i1'4 d'm'4 . ~ "
+# octave "4 3 4 4 . 4 4 5 4 . 5 4 4 4 . 4 3 3 4 . ~"
+# sound "superpiano" # velocity 0.1 # sustain 4.0 # gain 2.0
+# vowel "i"
+
+
+
+
+
+
+
+
+
+
+
+
+-- NOTE:
+-- Below was just fooling around with stuff from the documentation.
+-- Can be happily ignored.
+
+
+
+
+
+d9 $ silence

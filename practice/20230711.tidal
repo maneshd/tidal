@@ -1,0 +1,83 @@
+bpm x = do setcps (x / 60 / 4)
+
+bpm 100
+
+
+d1
+  $ slow 2
+  $ off (1/16) (|+ up "[2|4|7|12]")  --
+  $ echo 8 (1/8) 0.9
+  $ n "<0 1>"
+  |+ up "[-7,-12,0]"  --
+  # s "SARON"
+  # gain 1.0
+  # pan (range 0.2 0.8 $ slow 7 sine)
+
+
+
+once $ s "ocean:3"
+
+
+d2
+$ juxBy 0.8 (rev)
+$ sometimes (ply "[2|4|8]*16")
+$ often (# up "[5|6]")  --
+$ often (# up "[-12,-7]")  --
+$ superimpose (# up "12")
+$ rarely ((# distort 0.1) . (|- gain 0.3))
+$ s "ocean:3*[8|16|16]"
+# legato 1
+# grain (range 0.0 0.99 rand) 0.1
+# gain (range 1.1 1.4 $ slow 8 sine)
+
+
+
+
+
+d5
+$ fast 2
+$ stack [
+s "kick:5",
+s "hc" >| n "~ . ~ . 0 . [0 [0 0]?]?"
+]
+
+d7 $ s "bd*8" # gain 1.0
+
+d8 $ fast 2 $ s "~ clap ~ [clap ~ ~ clap?]" # n "5" # gain 0.9
+
+d9 $ s "[[[hc ho]|[ho hc]] . hc ho?]*4" # gain 0.8
+
+
+-- One way to build this pattern.
+-- d11
+-- $ s "DRUMS"
+-- >| n "<0 1> [3|6]?"
+
+d11
+$ fast 4
+$ sometimes (ply 2)
+$ often (superimpose (# up "[-5|-12|4]")) -- Can play around w/ these numbers!
+$ s "DRUMS"
+>| n "[0|1] 3? 1? [3|6]?"
+
+
+-- d11
+-- $ whenmod 8 7 (>| n "1 1")
+-- $ outside 4 (juxBy 0.8 rev)
+-- $ fast 4
+-- $ sometimes (ply 2)
+-- $ often (superimpose (# up "[-5|-12|4]"))
+-- $ s "DRUMS"
+-- >| n "[0|1] 3? 1? [3|6]?"
+
+
+
+do
+  solo 7
+  solo 9
+  solo 11
+
+do
+  unsolo 7
+  unsolo 9
+  unsolo 11

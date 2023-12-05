@@ -1,0 +1,89 @@
+-- Instrument 1
+-- Version 0
+d1
+$ slow 2
+$ off (1/16) (|+ up "[2|4|7]")  --
+$ echo 8 (1/8) 0.85
+$ n "<0 1>"
+# s "SARON"
+
+
+-- Version 1
+d1
+$ slow 2
+$ off (1/16) (|+ up "12")
+$ off (1/16) (|+ up "[2|4|7]")  --
+$ echo 8 (1/8) 0.85
+$ n "<0 1>"
+# s "SARON"
+
+
+-- Version 2
+d1
+$ slow 2
+$ off (1/16) (|+ up "12")
+$ off (1/16) (|+ up "[2|4|7]")
+$ echo 8 (1/8) 0.85
+$ n "<0 1 [2|3]>"
+# s "SARON"
+
+
+-- Version 3
+-- Tagged Green
+d1
+$ slow 2
+$ off (1/16) (|+ up "[2|4|7]")  --
+$ echo 8 (1/8) 0.85
+$ n "<0 1>"
+# s "SARON"
+# gain 1.1
+
+
+-- Version 4
+xfade 1
+$ slow 2
+$ off (1/16) (|+ up "[2|4|7]")  --
+$ echo 8 (1/8) 0.85
+$ n "<0 1>"
+# s "SARON"
+# gain 1.1
+
+
+
+-- Instrument 2
+-- Version 0
+d2
+$ often (# up "[-12,-7]")  --
+$ s "ocean:3*[8|16|16]"
+# legato 1
+# grain (range 0.0 0.99 rand) 0.1
+
+
+-- Version 1
+d2
+$ often (# up "[-12,-7]")  --
+$ s "ocean:3*[8|16|16]"
+# legato 1
+# grain (range 0.0 0.99 rand) 0.1
+# gain (range 1.1 1.4 $ slow 8 sine)
+
+
+-- Version 2
+d2
+$ often (# up "[-12,-7]")  --
+$ superimpose (# up "12")
+$ s "ocean:3*[8|16|16]"
+# legato 1
+# grain (range 0.0 0.99 rand) 0.1
+# gain (range 1.1 1.4 $ slow 8 sine)
+
+
+-- Version 3
+d2
+$ often (# up "[-12,-7]")  --
+$ superimpose (# up "12")
+$ rarely ((# distort 0.1) . (|- gain 0.3))
+$ s "ocean:3*[8|16|16]"
+# legato 1
+# grain (range 0.0 0.99 rand) 0.1
+# gain (range 1.1 1.4 $ slow 8 sine)

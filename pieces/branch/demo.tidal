@@ -1,0 +1,16 @@
+
+d1
+$ sometimes (# octave "[4|5]")
+$ off (1/12) (|+ up "[5|7]")
+$ off (1/12) (|+ up "[5|7]")
+$ n "c a f [e|g]"
+# sound "supermandolin"
+
+
+
+d2
+$ slow 4
+$ s "bd . hc ~!6 bd . bd bd ~ ~ . hc ~!6 bd?"
+
+
+hush

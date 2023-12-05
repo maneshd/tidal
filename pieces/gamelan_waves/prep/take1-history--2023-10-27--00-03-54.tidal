@@ -1,0 +1,1213 @@
+-- Instrument 1
+-- Version 0
+d1
+  $ off (1/8) ((|+ up "[2|3] [4|5] [7|8] [11|12]" ) . (|- gain 0.1))
+  $ superimpose (|+ up "<7 7 9 5>")
+  $ echo 4 (1/4) 0.9
+  $ n "<1 3 2 1>"
+  # s "sslenthem"
+  # gain 0.9
+  # legato 1.0
+
+
+-- Version 1
+d1
+  -- $ off (1/8) ((|+ up "[2|3] [4|5] [7|8] [11|12]" ) . (|- gain 0.1))
+  -- $ superimpose (|+ up "<7 7 9 5>")
+  -- $ echo 4 (1/4) 0.9
+  $ n "<1 3 2 1>"
+  # s "sslenthem"
+  # gain 0.9
+  # legato 1.0
+
+
+-- Version 2
+d1
+  -- $ off (1/8) ((|+ up "[2|3] [4|5] [7|8] [11|12]" ) . (|- gain 0.1))
+  -- $ superimpose (|+ up "<7 7 9 5>")
+  -- $ echo 4 (1/4) 0.9
+  $ n "<1 3 2 1>"
+  # s "[slenthem, sslenthem]"
+  # gain 0.9
+  # legato 1.0
+
+
+
+-- Instrument 2
+-- Version 0
+d2
+$ juxBy 0.8 (rev)
+-- $ sometimes (ply "[2|4|8]*16")
+-- $ often (# up "[5|6]")  --
+-- $ often (# up "[-12,-7]")  --
+$ superimpose (# up "12")
+-- $ rarely ((# distort 0.1) . (|- gain 0.3))
+$ s "ocean:3*[16]"
+# legato 0.9
+-- # grain (range 0.0 0.99 rand) 0.2
+-- # gain (range 1.1 1.4 $ slow 8 sine)
+
+
+-- Version 1
+d2
+$ juxBy 0.8 (rev)
+-- $ sometimes (ply "[2|4|8]*16")
+-- $ often (# up "[5|6]")  --
+-- $ often (# up "[-12,-7]")  --
+$ superimpose (# up "12")
+-- $ rarely ((# distort 0.1) . (|- gain 0.3))
+$ s "ocean:3*[16]"
+# legato 0.9
+# grain (range 0.0 0.99 rand) 0.2
+-- # gain (range 1.1 1.4 $ slow 8 sine)
+
+
+-- Version 2
+d2
+$ juxBy 0.8 (rev)
+-- $ sometimes (ply "[2|4|8]*16")
+-- $ often (# up "[5|6]")  --
+-- $ often (# up "[-12,-7]")  --
+$ superimpose (# up "12")
+-- $ rarely ((# distort 0.1) . (|- gain 0.3))
+$ s "ocean:3*[16]"
+# legato 0.9
+# grain (range 0.0 0.99 rand) 0.2
+# gain (range 1.1 1.4 $ slow 8 sine)
+
+
+-- Version 3
+d2
+$ juxBy 0.8 (rev)
+-- $ sometimes (ply "[2|4|8]*16")
+-- $ often (# up "[5|6]")  --
+-- $ often (# up "[-12,-7]")  --
+$ superimpose (# up "12")
+-- $ rarely ((# distort 0.1) . (|- gain 0.3))
+$ s "ocean:3*[8]"
+# legato 0.9
+# grain (range 0.0 0.99 rand) 0.2
+# gain (range 1.1 1.4 $ slow 8 sine)
+
+
+-- Version 4
+d2
+$ juxBy 0.8 (rev)
+-- $ sometimes (ply "[2|4|8]*16")
+-- $ often (# up "[5|6]")  --
+-- $ often (# up "[-12,-7]")  --
+$ superimpose (# up "12")
+-- $ rarely ((# distort 0.1) . (|- gain 0.3))
+$ s "ocean:3*[4]"
+# legato 0.9
+# grain (range 0.0 0.99 rand) 0.2
+# gain (range 1.1 1.4 $ slow 8 sine)
+
+
+-- Version 5
+d2
+$ juxBy 0.8 (rev)
+-- $ sometimes (ply "[2|4|8]*16")
+-- $ often (# up "[5|6]")  --
+-- $ often (# up "[-12,-7]")  --
+$ superimpose (# up "12")
+-- $ rarely ((# distort 0.1) . (|- gain 0.3))
+$ s "ocean:3*[4|3|5]"
+# legato 0.9
+# grain (range 0.0 0.99 rand) 0.2
+# gain (range 1.1 1.4 $ slow 8 sine)
+
+
+-- Version 6
+d2
+$ juxBy 0.8 (rev)
+-- $ sometimes (ply "[2|4|8]*16")
+-- $ often (# up "[5|6]")  --
+-- $ often (# up "[-12,-7]")  --
+$ superimpose (# up "12")
+-- $ rarely ((# distort 0.1) . (|- gain 0.3))
+$ s "ocean:3*[4|3]"
+# legato 0.9
+# grain (range 0.0 0.99 rand) 0.2
+# gain (range 1.1 1.4 $ slow 8 sine)
+
+
+-- Version 7
+d2
+$ juxBy 0.8 (rev)
+-- $ sometimes (ply "[2|4|8]*16")
+-- $ often (# up "[5|6]")  --
+-- $ often (# up "[-12,-7]")  --
+$ superimpose (# up "12")
+-- $ rarely ((# distort 0.1) . (|- gain 0.3))
+$ s "ocean:3*[4|3|8]"
+# legato 0.9
+# grain (range 0.0 0.99 rand) 0.2
+# gain (range 1.1 1.4 $ slow 8 sine)
+
+
+-- Version 8
+-- Tagged Red
+d2
+$ juxBy 0.8 (rev)
+-- $ sometimes (ply "[2|4|8]*16")
+$ often (# up "[5|6]")  --
+$ often (# up "[-12,-7]")  --
+$ superimpose (# up "12")
+-- $ rarely ((# distort 0.1) . (|- gain 0.3))
+$ s "ocean:3*[4|3|8]"
+# legato 0.9
+# grain (range 0.0 0.99 rand) 0.2
+# gain (range 1.1 1.4 $ slow 8 sine)
+
+
+-- Version 9
+d2
+$ juxBy 0.8 (rev)
+-- $ sometimes (ply "[2|4|8]*16")
+$ often (# up "[5|6]")  --
+$ often (# up "[-12,-7]")  --
+$ superimpose (# up "12")
+-- $ rarely ((# distort 0.1) . (|- gain 0.3))
+$ s "ocean:3*[16]"
+# legato 0.9
+# grain (range 0.0 0.99 rand) 0.2
+# gain (range 1.1 1.4 $ slow 8 sine)
+
+
+-- Version 10
+d2
+$ juxBy 0.8 (rev)
+-- $ sometimes (ply "[2|4|8]*16")
+$ often (# up "[5|6]")  --
+$ often (# up "[-12,-7]")  --
+$ superimpose (# up "12")
+-- $ rarely ((# distort 0.1) . (|- gain 0.3))
+$ s "ocean:3*[16|4]"
+# legato 0.9
+# grain (range 0.0 0.99 rand) 0.2
+# gain (range 1.1 1.4 $ slow 8 sine)
+
+
+-- Version 11
+d2
+$ juxBy 0.8 (rev)
+-- $ sometimes (ply "[2|4|8]*16")
+$ often (# up "[5|6]")  --
+$ often (# up "[-12,-7]")  --
+$ superimpose (# up "12")
+-- $ rarely ((# distort 0.1) . (|- gain 0.3))
+$ s "ocean:3*<16 4>"
+# legato 0.9
+# grain (range 0.0 0.99 rand) 0.2
+# gain (range 1.1 1.4 $ slow 8 sine)
+
+
+-- Version 12
+d2
+$ juxBy 0.8 (rev)
+-- $ sometimes (ply "[2|4|8]*16")
+$ often (# up "[5|6]")  --
+$ often (# up "[-12,-7]")  --
+$ superimpose (# up "12")
+-- $ rarely ((# distort 0.1) . (|- gain 0.3))
+$ s "ocean:3*<16 [4|3]>"
+# legato 0.9
+# grain (range 0.0 0.99 rand) 0.2
+# gain (range 1.1 1.4 $ slow 8 sine)
+
+
+-- Version 13
+-- Tagged Green
+d2
+$ juxBy 0.8 (rev)
+-- $ sometimes (ply "[2|4|8]*16")
+$ often (# up "[5|6]")  --
+$ often (# up "[-12,-7]")  --
+$ superimpose (# up "12")
+-- $ rarely ((# distort 0.1) . (|- gain 0.3))
+$ s "ocean:3*<16 [4|3|8]>"
+# legato 0.9
+# grain (range 0.0 0.99 rand) 0.2
+# gain (range 1.1 1.4 $ slow 8 sine)
+
+
+-- Version 14
+d2
+$ n "0 1 2 3"
+# s "saron"
+
+
+-- Version 15
+d2
+$ n "0 1 2 3"
+# s "saron"
+# legato 1.0
+
+
+-- Version 16
+d2
+$ n "1 2 3 4"
+# s "saron"
+# legato 1.0
+
+
+-- Version 17
+d2
+$ n "1 2 3 4 . 5 6 7 8"
+# s "saron"
+# legato 1.0
+
+
+-- Version 18
+d2
+$ n "1 2 3 4 . 5 6 5 7"
+# s "saron"
+# legato 1.0
+
+
+-- Version 19
+d2
+$ scramble 16
+$ often (ply 2)
+$ n "1 2 3 4 . 5 6 5 7"
+# s "saron"
+# legato 1.0
+
+
+-- Version 20
+d2
+$ scramble 16
+$ often (ply 2)
+$ mask (scramble 8 $ "0 0 1 1 1 1 1 1")
+$ n "1 2 3 4 . 5 6 5 7"
+# s "saron"
+# legato 1.0
+
+
+-- Version 21
+d2
+$ scramble 16
+$ often (ply 2)
+$ mask (scramble 8 $ "0 0 0 0 1 1 1 1")
+$ n "1 2 3 4 . 5 6 5 7"
+# s "saron"
+# legato 1.0
+
+
+-- Version 22
+d2
+$ scramble 16
+$ mask (scramble 8 $ "0 0 0 0 1 1 1 1")
+$ often (ply 2)
+$ n "1 2 3 4 . 5 6 5 7"
+# s "saron"
+# legato 1.0
+
+
+-- Version 23
+d2
+$ juxBy 0.8 (rev)
+$ sometimes (ply "[2|4|8]*16")
+$ often (# up "[5|6]")  --
+$ often (# up "[-12,-7]")  --
+$ superimpose (# up "12")
+-- $ rarely ((# distort 0.1) . (|- gain 0.3))
+$ s "ocean:3*<16 [4|3|8]>"
+# legato 0.9
+# grain (range 0.0 0.99 rand) 0.2
+# gain (range 1.1 1.4 $ slow 8 sine)
+
+
+-- Version 24
+d2
+$ juxBy 0.8 (rev)
+$ sometimes (ply "[2|4|8]*16")
+$ often (# up "[5|6]")  --
+$ often (# up "[-12,-7]")  --
+$ superimpose (# up "12")
+$ rarely ((# distort 0.1) . (|- gain 0.3))
+$ s "ocean:3*<16 [4|3|8]>"
+# legato 0.9
+# grain (range 0.0 0.99 rand) 0.2
+# gain (range 1.1 1.4 $ slow 8 sine)
+
+
+-- Version 25
+d2
+$ juxBy 0.8 (rev)
+-- $ sometimes (ply "[2|4|8]*16")
+-- $ often (# up "[5|6]")  --
+-- $ often (# up "[-12,-7]")  --
+$ superimpose (# up "12")
+-- $ rarely ((# distort 0.1) . (|- gain 0.3))
+$ s "ocean:3*[8]"
+# legato 0.9
+-- # grain (range 0.0 0.99 rand) 0.2
+-- # gain (range 1.1 1.4 $ slow 8 sine)
+
+
+-- Version 26
+d2
+$ juxBy 0.8 (rev)
+-- $ sometimes (ply "[2|4|8]*16")
+-- $ often (# up "[5|6]")  --
+-- $ often (# up "[-12,-7]")  --
+$ superimpose (# up "12")
+-- $ rarely ((# distort 0.1) . (|- gain 0.3))
+$ s "ocean:3*[4]"
+# legato 0.9
+-- # grain (range 0.0 0.99 rand) 0.2
+-- # gain (range 1.1 1.4 $ slow 8 sine)
+
+
+-- Version 27
+d2
+-- $ juxBy 0.8 (rev)
+-- $ sometimes (ply "[2|4|8]*16")
+-- $ often (# up "[5|6]")  --
+-- $ often (# up "[-12,-7]")  --
+$ superimpose (# up "12")
+-- $ rarely ((# distort 0.1) . (|- gain 0.3))
+$ s "ocean:3*[4]"
+# legato 0.9
+-- # grain (range 0.0 0.99 rand) 0.2
+-- # gain (range 1.1 1.4 $ slow 8 sine)
+
+
+-- Version 28
+d2
+-- $ juxBy 0.8 (rev)
+-- $ sometimes (ply "[2|4|8]*16")
+-- $ often (# up "[5|6]")  --
+-- $ often (# up "[-12,-7]")  --
+$ superimpose (# up "12")
+-- $ rarely ((# distort 0.1) . (|- gain 0.3))
+$ s "ocean:3*[4]"
+# legato 0.9
+# grain (range 0.0 0.99 rand) 0.2
+-- # gain (range 1.1 1.4 $ slow 8 sine)
+
+
+-- Version 29
+d2
+$ juxBy 0.8 (rev)
+-- $ sometimes (ply "[2|4|8]*16")
+-- $ often (# up "[5|6]")  --
+-- $ often (# up "[-12,-7]")  --
+$ superimpose (# up "12")
+-- $ rarely ((# distort 0.1) . (|- gain 0.3))
+$ s "ocean:3*[4]"
+# legato 0.9
+# grain (range 0.0 0.99 rand) 0.2
+-- # gain (range 1.1 1.4 $ slow 8 sine)
+
+
+-- Version 30
+d2
+$ juxBy 0.8 (rev)
+-- $ sometimes (ply "[2|4|8]*16")
+$ often (# up "[5|6]")  --
+-- $ often (# up "[-12,-7]")  --
+$ superimpose (# up "12")
+-- $ rarely ((# distort 0.1) . (|- gain 0.3))
+$ s "ocean:3*[4|3|8]"
+# legato 0.9
+# grain (range 0.0 0.99 rand) 0.2
+# gain (range 1.1 1.4 $ slow 8 sine)
+
+
+-- Version 31
+d2
+$ juxBy 0.8 (rev)
+-- $ sometimes (ply "[2|4|8]*16")
+-- $ often (# up "[5|6]")  --
+$ often (# up "[-12,-7]")  --
+$ superimpose (# up "12")
+-- $ rarely ((# distort 0.1) . (|- gain 0.3))
+$ s "ocean:3*[4|3|8]"
+# legato 0.9
+# grain (range 0.0 0.99 rand) 0.2
+# gain (range 1.1 1.4 $ slow 8 sine)
+
+
+-- Version 32
+d2
+$ juxBy 0.8 (rev)
+-- $ sometimes (ply "[2|4|8]*16")
+-- $ often (# up "[5|6]")  --
+$ often (# up "[-12,-7]")  --
+$ superimpose (# up "12")
+-- $ rarely ((# distort 0.1) . (|- gain 0.3))
+$ s "ocean:3*<16 [4|3|8]>"
+# legato 0.9
+# grain (range 0.0 0.99 rand) 0.2
+# gain (range 1.1 1.4 $ slow 8 sine)
+
+
+
+-- Instrument 3
+-- Version 0
+d3
+$ sometimes (ply 2)
+$ mask (scramble 8 $ "1 0 1 0 1 1 1 1")
+$ loopFirst
+$ n (scramble 8 $ run 8)
+# s "kendhang"
+
+
+-- Version 1
+d3
+$ sometimes (ply 2)
+$ mask (scramble 8 $ "0 0 0 0 1 1 1 1")
+$ loopFirst
+$ n (scramble 8 $ run 8)
+# s "kendhang"
+
+
+-- Version 2
+d3
+$ sometimes (ply 2)
+$ mask (scramble 8 $ "0 0 1 1 1 1 1 1")
+$ loopFirst
+$ n (scramble 8 $ run 8)
+# s "kendhang"
+
+
+-- Version 3
+d3
+$ sometimes (ply 2)
+-- $ mask (scramble 8 $ "0 0 1 1 1 1 1 1")
+$ loopFirst
+$ n (scramble 8 $ run 8)
+# s "kendhang"
+
+
+-- Version 4
+d3
+$ sometimes (ply 2)
+-- $ mask (scramble 8 $ "0 0 1 1 1 1 1 1")
+-- $ loopFirst
+$ n (scramble 8 $ run 8)
+# s "kendhang"
+
+
+-- Version 5
+d3
+$ sometimes (ply 2)
+$ mask (scramble 8 $ "0 0 1 1 1 1 1 1")
+-- $ loopFirst
+$ n (scramble 8 $ run 8)
+# s "kendhang"
+
+
+-- Version 6
+d3
+$ sometimes (ply 2)
+$ degradeBy 0.2
+-- $ mask (scramble 8 $ "0 0 1 1 1 1 1 1")
+-- $ loopFirst
+$ n (scramble 8 $ run 8)
+# s "kendhang"
+
+
+-- Version 7
+d3
+$ sometimes (ply "[2|3]")
+$ degradeBy 0.2
+-- $ mask (scramble 8 $ "0 0 1 1 1 1 1 1")
+-- $ loopFirst
+$ n (scramble 8 $ run 8)
+# s "kendhang"
+
+
+-- Version 8
+d3
+$ sometimes (ply "[2|3]")
+$ degradeBy 0.2
+-- $ mask (scramble 8 $ "0 0 1 1 1 1 1 1")
+-- $ loopFirst
+$ n (scramble 8 $ run 8)
+# s "kendhang"
+# pan (range 0.2 0.8 $ rand)
+
+
+-- Version 9
+d3
+$ sometimes (ply "[2|3]")
+-- $ degradeBy 0.2
+$ mask (scramble 8 $ "0 0 1 1 1 1 1 1")
+-- $ loopFirst
+$ n (scramble 8 $ run 8)
+# s "kendhang"
+# pan (range 0.2 0.8 $ rand)
+
+
+-- Version 10
+d3
+$ sometimes (ply "[2|3]")
+-- $ degradeBy 0.2
+-- $ mask (scramble 8 $ "0 0 1 1 1 1 1 1")
+-- $ loopFirst
+$ n (scramble 8 $ run 8)
+# s "kendhang"
+# pan (range 0.2 0.8 $ rand)
+
+
+
+-- Instrument 4
+-- Version 0
+d4
+$ n "0"
+# s "kendhang"
+
+
+-- Version 1
+d4
+$ n "1"
+# s "kendhang"
+
+
+-- Version 2
+d4
+$ n "1"
+# s "barung"
+# legato 0.8
+
+
+-- Version 3
+d4
+$ n "0"
+# s "barung"
+# legato 0.8
+
+
+
+-- Instrument 5
+-- Version 0
+d5
+$ slow 2
+$ superimpose (|+ up 5)
+$ s "gong:6"
+
+
+-- Version 1
+d5
+$ slow 2
+$ superimpose (|+ up 5)
+$ s "gong:1"
+
+
+-- Version 2
+d5
+$ slow 2
+-- $ superimpose (|+ up 5)
+$ s "gong:1"
+
+
+-- Version 3
+d5
+$ slow 2
+-- $ superimpose (|+ up 5)
+$ s "sgong:1"
+
+
+-- Version 4
+d5
+$ slow 2
+-- $ superimpose (|+ up 5)
+$ s "sgong:1"
+# room 1.0
+
+
+-- Version 5
+d5
+$ slow 4
+-- $ superimpose (|+ up 5)
+$ s "sgong:1"
+# room 1.0
+
+
+-- Version 6
+d5
+$ slow 4
+-- $ superimpose (|+ up 5)
+$ s "sgong:1 sgong:2"
+# room 1.0
+
+
+-- Version 7
+d5
+$ slow 4
+-- $ superimpose (|+ up 5)
+$ s "sgong:1 sgong:3"
+# room 1.0
+
+
+-- Version 8
+d5
+$ slow 4
+$ s "sgong:1"
+# room 1.0
+
+
+-- Version 9
+d5
+$ slow 4
+$ s "sgong:1"
+# room 1.0
+# grain 0.05 2.0
+# legato 1.0
+
+
+-- Version 10
+d5
+$ slow 4
+$ s "sgong:1 sgong:3"
+# room 1.0
+# grain 0.05 2.0
+# legato 1.0
+
+
+-- Version 11
+d5
+$ slow 4
+$ s "sgong:1 sgong:4"
+# room 1.0
+# grain 0.05 2.0
+# legato 1.0
+
+
+
+-- Instrument 8
+-- Version 0
+d8 $ n "0*2" # s "KETHUK"
+
+
+-- Version 1
+d8 $ n "0*4" # s "KETHUK"
+
+
+-- Version 2
+d8 $ n "0*4" # s "KETHUK" # gain 1.3 # legato 0.2
+
+
+-- Version 3
+d8 $ n "0*4" # s "KETHUK" # gain 1.3 # legato 0.3
+
+
+-- Version 4
+d8 $ n "0*4" # s "KETHUK" # gain 1.3 # legato 0.5
+
+
+-- Version 5
+d8 $ n "0*4" # s "KETHUK" # legato 0.5
+# gain (range 0.7 1.3 $ slow 8 sine)
+
+
+-- Version 6
+d8 $ n "0*4" # s "KETHUK" # legato 0.5
+# gain (range 0.7 1.3 $ slow 8 sine)
+# pan (range 0.3 0.7 $ slow 7 sine)
+
+
+-- Version 7
+xfade 8 $ n "0*4" # s "KETHUK" # legato 0.5
+# gain (range 0.7 1.3 $ slow 8 sine)
+# pan (range 0.3 0.7 $ slow 7 sine)
+
+
+
+-- Instrument 9
+-- Version 0
+d9
+$ scramble 16
+$ mask (scramble 8 $ "0 0 0 0 1 1 1 1")
+$ often (ply 2)
+$ n "1 2 3 4 . 5 6 5 7"
+# s "saron"
+# legato 1.0
+
+
+-- Version 1
+d9
+$ scramble 16
+$ mask (scramble 8 $ "0 0 0 0 1 1 1 1")
+$ often (ply 2)
+$ n "1 2 3 4 . 5 6 5 7"
+# s "[saron,ssaron]"
+# legato 1.0
+
+
+-- Version 2
+d9
+$ scramble 16
+$ mask (scramble 8 $ "0 0 1 1 1 1 1 1")
+$ often (ply 2)
+$ n "1 2 3 4 . 5 6 5 7"
+# s "[saron,ssaron]"
+# legato 1.0
+
+
+-- Version 3
+d9
+$ scramble 16
+$ mask (scramble 8 $ "0 0 1 1 1 1 1 1")
+$ often (ply 4)
+$ n "1 2 3 4 . 5 6 5 7"
+# s "[saron,ssaron]"
+# legato 1.0
+
+
+-- Version 4
+d9
+$ scramble 16
+$ mask (scramble 8 $ "0 0 1 1 1 1 1 1")
+$ often (ply 3)
+$ n "1 2 3 4 . 5 6 5 7"
+# s "[saron,ssaron]"
+# legato 1.0
+
+
+-- Version 5
+d9
+$ scramble 16
+$ mask (scramble 8 $ "0 0 1 1 1 1 1 1")
+$ often (ply "[2|3|4])
+$ n "1 2 3 4 . 5 6 5 7"
+# s "[saron,ssaron]"
+# legato 1.0
+
+
+-- Version 6
+d9
+$ scramble 16
+$ mask (scramble 8 $ "0 0 1 1 1 1 1 1")
+$ often (ply "[2|3|4]")
+$ n "1 2 3 4 . 5 6 5 7"
+# s "[saron,ssaron]"
+# legato 1.0
+
+
+-- Version 7
+d9
+$ scramble 16
+$ mask (scramble 8 $ "0 0 1 1 1 1 1 1")
+$ often (ply "[2|3|4]")
+$ n "1 2 3 4 . 5 6 5 7"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain 0.9
+
+
+-- Version 8
+d9
+$ silence
+
+
+-- Version 9
+d9
+$ n "{4 3 2 4 ~}%16"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0 0.9 $ slow 16 sine)
+
+
+-- Version 10
+d9
+$ n "{4 3 2 [4|5] ~}%16"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0 0.9 $ slow 16 sine)
+
+
+-- Version 11
+d9
+$ n "{4 3 2 [4|5|6] ~}%16"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0 0.9 $ slow 16 sine)
+
+
+-- Version 12
+-- Tagged Red
+d9
+$ n "{4 3 2 [4|5|6] ~}%16"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.4 0.9 $ slow 16 sine)
+
+
+-- Version 13
+d9
+$ n "{4 3 2 [4|5|6] ~}%32"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.4 0.9 $ slow 16 sine)
+
+
+-- Version 14
+d9
+$ n "{2 3 4 ~}%16"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.4 0.9 $ slow 16 sine)
+
+
+-- Version 15
+d9
+$ n "{2 3 4 ~ 2 3 4 5 ~}%16"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.4 0.9 $ slow 16 sine)
+
+
+-- Version 16
+d9
+$ n "{2 3 4 ~ }%16"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.4 0.9 $ slow 16 sine)
+
+
+-- Version 17
+d9
+$ n "{2 3 4 ~}%24"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.4 0.9 $ slow 16 sine)
+
+
+-- Version 18
+d9
+$ n "{[2|1] 3 4 ~}%24"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.4 0.9 $ slow 16 sine)
+
+
+-- Version 19
+d9
+$ n "{[2|1] 3 4 ~}%32"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.4 0.9 $ slow 16 sine)
+
+
+-- Version 20
+d9
+$ n "{[2|1] 3 [4|6] ~}%32"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.4 0.9 $ slow 16 sine)
+
+
+-- Version 21
+-- Tagged Red
+d9
+$ n "{[2|1] [3|7] [4|6] ~}%32"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.4 0.9 $ slow 16 sine)
+
+
+-- Version 22
+d9
+$ off (1/64) (up "3")
+$ n "{[2|1] [3|7] [4|6] ~}%32"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.4 0.9 $ slow 16 sine)
+
+
+-- Version 23
+d9
+$ off (1/64) (# up "3")
+$ n "{[2|1] [3|7] [4|6] ~}%32"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.4 0.9 $ slow 16 sine)
+
+
+-- Version 24
+d9
+$ off (1/64) (# up "3")
+$ n "{[2|1] [3|7] [4|6] ~}%16"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.4 0.9 $ slow 16 sine)
+
+
+-- Version 25
+d9
+$ off (1/32) (# up "3")
+$ n "{[2|1] [3|7] [4|6] ~}%16"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.4 0.9 $ slow 16 sine)
+
+
+-- Version 26
+d9
+$ off (1/32) (# up "3")
+$ n "{[2|1] [3|7] [4|6] [1|7]}%16"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.4 0.9 $ slow 16 sine)
+
+
+-- Version 27
+-- Tagged Green
+d9
+$ off (1/32) (# up "3")
+$ degradeBy 0.1
+$ n "{[2|1] [3|7] [4|6] [1|7]}%16"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.4 0.9 $ slow 16 sine)
+
+
+-- Version 28
+d9
+$ off (1/32) (# up "2")
+$ degradeBy 0.1
+$ n "{[2|1] [3|7] [4|6] [1|7]}%16"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.4 0.9 $ slow 16 sine)
+
+
+-- Version 29
+d9
+$ off (1/32) (# up "1")
+$ degradeBy 0.1
+$ n "{[2|1] [3|7] [4|6] [1|7]}%16"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.4 0.9 $ slow 16 sine)
+
+
+-- Version 30
+d9
+$ off (1/32) (# up "[2|4]")
+$ degradeBy 0.1
+$ n "{[2|1] [3|7] [4|6] [1|7]}%16"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.4 0.9 $ slow 16 sine)
+
+
+-- Version 31
+d9
+$ juxBy 0.5 rev
+$ off (1/32) (# up "[2|4]")
+$ degradeBy 0.1
+$ n "{[2|1] [3|7] [4|6] [1|7]}%16"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.4 0.9 $ slow 16 sine)
+
+
+-- Version 32
+d9
+$ juxBy 0.5 rev
+$ off (1/32) (# up "[2|4]")
+$ degradeBy 0.1
+$ n "{[2|1] [3|7] [4|6] [1|7]}%8"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.4 0.9 $ slow 16 sine)
+
+
+-- Version 33
+d9
+$ juxBy 0.5 rev
+$ off (1/16) (# up "[2|4]")
+$ degradeBy 0.1
+$ n "{[2|1] [3|7] [4|6] [1|7]}%8"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.4 0.9 $ slow 16 sine)
+
+
+-- Version 34
+d9
+$ juxBy 0.5 rev
+$ off (1/16) (# up "[2|4]")
+$ degradeBy 0.1
+$ n "{[2|1] [3|7] [4|6] [1|7]}%8"
+# s "[saron,ssaron]"
+# legato 0.5
+# gain (range 0.4 0.9 $ slow 16 sine)
+
+
+-- Version 35
+d9
+$ juxBy 0.5 rev
+$ off (1/16) (# up "[2|4]")
+$ degradeBy 0.3
+$ n "{[2|1] [3|7] [4|6] [1|7]}%8"
+# s "[saron,ssaron]"
+# legato 0.5
+# gain (range 0.4 0.9 $ slow 16 sine)
+
+
+-- Version 36
+d9
+$ juxBy 0.5 rev
+$ off (1/16) (# up "[2|4]")
+$ often (ply 2)
+$ degradeBy 0.3
+$ n "{[2|1] [3|7] [4|6] [1|7]}%8"
+# s "[saron,ssaron]"
+# legato 0.5
+# gain (range 0.4 0.9 $ slow 16 sine)
+
+
+-- Version 37
+d9
+$ juxBy 0.5 rev
+-- $ off (1/16) (# up "[2|4]")
+$ often (ply 2)
+$ degradeBy 0.3
+$ n "{[2|1] [3|7] [4|6] [1|7]}%8"
+# s "[saron,ssaron]"
+# legato 0.5
+# gain (range 0.4 0.9 $ slow 16 sine)
+
+
+-- Version 38
+d9
+$ juxBy 0.5 rev
+-- $ off (1/16) (# up "[2|4]")
+$ often (ply 2)
+$ degradeBy 0.3
+$ n "{[2|1] [3|7] [4|6] [1|7]}%8"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.4 0.9 $ slow 16 sine)
+
+
+-- Version 39
+d9
+$ n "{[4|5|6] ~}%4"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.4 0.9 $ slow 16 sine)
+
+
+-- Version 40
+d9
+$ jux rev)
+$ off (1/32) (# up "3")
+$ degradeBy 0.1
+$ n "{[2|1] [3|7] [4|6] [1|7]}%16"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.4 0.9 $ slow 16 sine)
+
+
+-- Version 41
+d9
+$ jux rev
+$ off (1/32) (# up "3")
+$ degradeBy 0.1
+$ n "{[2|1] [3|7] [4|6] [1|7]}%16"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.4 0.9 $ slow 16 sine)
+
+
+-- Version 42
+d9
+$ jux rev
+$ off (1/32) (# up "3")
+$ degradeBy 0.1
+$ n "{[2|1] [3|7] [4|6] [1|7]}%16"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.4 0.9 $ slow 46 sine)
+
+
+-- Version 43
+d9
+$ jux rev
+$ off (1/32) (# up "3")
+$ degradeBy 0.1
+$ n "{[2|1] [3|7] [4|6] [1|7]}%16"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.4 0.9 $ slow 4 sine)
+
+
+-- Version 44
+d9
+$ jux rev
+$ off (1/32) (# up "3")
+$ degradeBy 0.1
+$ n "{[2|1] [3|7] [4|6] [1|7]}%16"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.3 0.8 $ slow 4 sine)
+
+
+-- Version 45
+d9
+$ jux rev
+$ off (1/32) (# up "3")
+$ degradeBy 0.1
+$ n "{[2|1] [3|7] [4|6] [1|7]}%16"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.3 0.8 $ slow 2 sine)
+
+
+-- Version 46
+d9
+$ degradeBy 0.1
+$ n "1 1 . ~ . ~ . ~"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.3 0.8 $ slow 4 sine)
+
+
+-- Version 47
+d9
+$ n "1 1 . ~ . ~ . ~"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.3 0.8 $ slow 4 sine)
+
+
+-- Version 48
+d9
+$ n "1 1 ~ ~  . ~ . ~ . ~"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.3 0.8 $ slow 4 sine)
+
+
+-- Version 49
+d9
+$ n "[[1 1]|[3 3]] ~ ~  . ~ . ~ . ~"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.3 0.8 $ slow 4 sine)
+
+
+-- Version 50
+d9
+$ jux rev
+$ n "[[1 1]|[3 3]] ~ ~  . ~ . ~ . ~"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.3 0.8 $ slow 4 sine)
+
+
+-- Version 51
+d9
+$ jux rev
+$ n "[[1 1]|[3 3]] ~ ~  . ~ . ~ . ~"
+# s "[saron,ssaron]"
+# legato 1.0
+# gain (range 0.3 0.8 $ slow 4 sine)

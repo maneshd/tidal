@@ -1,0 +1,485 @@
+-- 2023/12/03
+
+
+-----------
+-- SETUP --
+-----------
+
+bpm x = do setcps (x / 60 / 4)
+
+bpm 80
+
+-------------
+-- 1) Slow --
+-------------
+
+
+once $ s "ocean:3" # gain 1.2 # pan 0.7
+
+once $ s "ocean:3" # gain 1.2 # pan 0.3
+
+xfade 3
+  $ s "KETHUK:0*2"
+  # gain (range 0.85 1.25 $ slow 8 sine)
+  # pan (range 0.3 0.7 $ slow 5 sine)
+
+d2
+  $ slow 4
+  $ up "-6 0" ----
+  # s "sgong:1"
+  # grain 0.05 2.0
+  # room 1.0 # gain 0.9 # legato 1.0
+
+d4
+  $ slow 2
+  $ off (1/16) (|+ up "<5 <2 5 8>>")  --------------------------
+  $ echo 8 (1/8) 0.88
+  $ n "<[1,3] [2,5]>"
+  # s "saron" # legato 1.0 # gain 0.8
+
+d5
+  $ slow 4
+  $ n  "3  3 2 [2 2]"
+  # up "0 -7 0 [0 5]"
+  # s "[slenthem, sslenthem]"
+  # gain 0.85
+  # legato 1.0
+
+d1
+$ juxBy 0.8 (rev)
+$ superimpose (# up "12")
+$ often (# up "[-12,-7]") -- ??
+$ s "ocean:3"
+# legato 0.95
+# grain (range 0.0 0.99 rand) 0.2
+# gain (range 1.2 1.4 $ slow 8 sine)
+
+d5 $ silence
+
+d4
+  $ slow 2
+  $ echo 8 (1/8) 0.90
+  $ n "<[1,3] [2,5]>" # s "saron"
+  # legato 1.0 # gain 0.8
+
+xfade 4 $ silence
+
+
+
+-----------------
+-- 2) Moderate --
+-----------------
+
+do
+  bpm 120
+  d4 $ silence
+  d5 $ silence
+  d3
+    $ slow 2 $ n "0 0 0 . 0 0"
+    # s "KETHUK"
+    # legato 1.0
+    # gain 1.35
+    # pan (range 0.3 0.7 $ slow 7 sine)
+  d1
+    $ juxBy 0.8 (rev)
+    $ superimpose (# up "12")
+    $ often (# up "[-12,-7]")
+    $ s "ocean:3*<2 3>"
+    # legato 0.9
+    # grain (range 0.0 0.99 rand) 0.2
+    # gain (range 1.2 1.4 $ slow 8 sine)
+  d2
+    $ slow 4
+    $ up "-6 0"
+    # s "sgong:1"
+    # grain 0.05 2.0
+    # room 1.0 # gain 0.9 # legato 1.0
+
+
+-- TODO: Maybe vary the rhythms
+do
+  d4
+    $ slow 2
+    $ echo 12 (1/12) 0.9
+    $ n "<[1,3] [2,5]>"
+    # s "saron"
+    # legato 1.0
+    # gain 0.9
+  d5
+    $ slow 2
+    $ echo 6 (1/12) 0.90
+    $ n "<[3 3] [2 . 2 2]>"
+    # up "<[5 -7] [0 . 0 5]>"
+    # s "[slenthem, sslenthem]"
+    # gain 0.85
+    # legato 1.0
+
+xfadeIn 6 4
+  $ slow 2
+  $ sometimes (superimpose (# up 12))
+  $ cat [
+    sometimes (ply 2)
+      $ degradeBy 0.2
+      $ inside 2 (iter 3)
+      $ n "1 2 3 5 3 2 . 3 5 6 5 3 2",
+    n "1 1 ~ 1 1 ~ 1 1 ~ 1 1 1 . 3 3 ~ 2 2 ~ 3 3 ~ 5 5 5",
+    sometimes (ply 2)
+      $ degradeBy 0.2
+      $ n "1 3 1 3 5 3 . 5 3 5 6 5 3",
+    n "[2, 5]*4 . [3, 6]*4"
+  ]
+  # s "demung"
+  # legato 1.1
+  # gain (range 0.75 0.85 $ slow 12 sine)
+  # pan "[0.3 0.7]*6"
+
+d1
+$ juxBy 0.8 (rev)
+$ superimpose (# up "12")
+$ often (# up "[-12,-7]")  -- add (3)
+$ s "ocean:3*<[4|8|12] [3|6]>"
+# legato 0.9
+# grain (range 0.0 0.99 rand) 0.2  -- add (1)
+# gain (range 1.2 1.4 $ slow 8 sine)
+
+
+d6
+  $ sometimes (superimpose (# up "[12]"))
+  $ cat [
+    struct "t t ~ t t ~ t t ~ t t t"
+    $ n "<3 1 2 5>",
+    n "<[[2, 5]*[2|3|4]] [[3, 6]*[2|3|4]]>",
+    struct "t t ~ t t ~ t t ~ t t t"
+    $ n "<2 5 3 1>"
+  ]
+  # s "demung"
+  # legato 1.1
+  # gain (range 0.75 0.85 $ slow 12 sine)
+  # pan "[0.3 0.7]*6"
+
+do
+  d6
+    $ sometimes (superimpose (# up "[12]"))
+    $ n "<[[2, 5]*[2|3|4]] [[3, 6]*[2|3|4]]>"
+    # s "[demung, sdemung]"
+    # s "demung"
+    # legato 1.1
+    # gain "0.8 0.7 0.6 0.5"
+    # pan "[0.3 0.7]*6"
+  d5
+    $ slow 2
+    $ echo 6 (1/12) 0.90
+    $ n "<[3 3] [2 2]>"
+    # up "<5 0>"
+    # s "[slenthem, sslenthem]"
+    # gain 0.85
+    # legato 1.0
+  d4
+    $ slow 2
+    $ echo 12 (1/12) 0.9
+    $ n "<[1,3] [2,5]>"
+    # s "saron"
+    # legato 1.0
+    # gain 0.8
+
+do
+  xfadeIn 5 16 $ silence
+  xfadeIn 6 16 $ silence
+
+
+do
+  d1
+    $ juxBy 0.8 (rev)
+    $ superimpose (# up "12")
+    $ often (# up "[-12,-7]")  -- add (3)
+    $ s "ocean:3*5"
+    # legato 0.9
+    # grain (range 0.0 0.99 rand) 0.2  -- add (1)
+    # gain (range 1.2 1.4 $ slow 8 sine)
+  d2
+    $ slow 4
+    $ up "-6 -6"
+    # s "sgong:1"
+    # grain 0.05 2.0
+    # room 1.0 # gain 0.9 # legato 1.0
+  d3
+    $ n "0*2"
+    # s "KETHUK"
+    # legato 1.0
+    # gain 1.35
+    # pan (range 0.3 0.7 $ slow 7 sine)
+
+do
+  d4
+    $ slow 2
+    $ echo 8 (1/8) 0.9
+    $ n "<[1,3] [2,5]>"
+    # s "saron"
+    # legato 1.0
+    # gain 0.9
+
+
+d10 $ s "hc*5" # gain "0.7"
+
+xfadeIn 1 8
+$ juxBy 0.8 (rev)
+$ often ((# distort 2.0) . (|- gain 0.6))
+$ superimpose (# up "12")
+$ often (# up "[-12,-7]")
+$ s "ocean:3*10"
+# legato 0.9
+# grain (range 0.0 0.99 rand) 0.2
+# gain (range 1.3 1.5 $ slow 8 sine)
+
+
+
+bpm 120
+
+bpm 160
+
+-------------
+-- 3) Fast --
+-------------
+
+-- TODO: consider distortion IMMEDIATELY
+
+do
+  bpm 166
+  d2
+    $ slow 4
+    $ (superimpose ((# squiz 2.0) . (# gain 0.8))) ---------------------------
+    $ s "sgong:1 sgong:1 KETHUK:2 sgong:1"
+    # up "-6 0 3 0"
+    # room "1.0 1.0 2.0 1.0"
+    # grain 0.02 2.0
+    # legato "1.0 2.0 1.0 1.0"
+    -- # gain ("0.9 0.9 1.1 0.9")
+    # gain ("0.1" + "0.9 0.9 1.1 0.9") -----------------------
+  d3
+    $ n "0*2"
+    # s "KETHUK"
+    # legato 1.0
+    # gain 1.7
+    # pan (range 0.3 0.7 $ slow 7 sine)
+  d1
+    $ juxBy 0.8 (rev)
+    $ often ((# distort 2.0) . (|- gain "[0.55|0.7|0.7]"))
+    $ superimpose (# up "12")
+    $ often (# up "[-12,-7]")
+    $ s "ocean:3*[10]"
+    # legato 0.9
+    # grain (range 0.0 0.99 rand) 0.2
+    # gain (range 1.45 1.55 $ slow 8 sine)
+  d10 $ s "hc*5" # gain "0.7"
+  d4
+    $ sometimes (# squiz 2.0)  --------------------------------
+    $ off (1/10) (|+ up "<5 <2 5 8>>")
+    $ echo 5 (1/5) 0.9
+    $ n "<[1,3] [2,5] [3,6] [2,5]>"
+    # s "saron"
+    # legato 1.0
+    # gain 0.8
+  d6
+    $ outside 4 (juxBy 0.8 rev)
+    $ degradeBy 0.2
+    $ slow 4
+    $ sometimes (ply 2)
+    $ sometimes ((# distort 0.5) . (# gain 1.1))  -------------------
+    $ n (fast 4 $ scramble 5 $ run 5)
+    # s "kendhang"
+    # gain 1.15
+    # pan (range 0.2 0.8 $ rand)
+
+
+
+d5
+  $ often (# squiz "[2]") ------------------------------------
+  $ slow 4
+  $ n "3 3 3 3 2 2 2 2"
+  # up "0 5 0 5 0 5 0 5"
+  # s "[slenthem, sslenthem]"
+  # gain 1.00
+  # legato 1.0
+
+d6
+  $ slow 2
+  $ sometimes ((# distort 2.0) . (|- gain 0.1)) -------------------
+  $ sometimes (# up 12)
+  $ cat [
+    sometimes (ply 2)
+      $ sometimes (# up 5)
+      $ n "1 2 3 5 3 . 2 3 5 6 5",
+    (fast 2) $ n "1 1 ~ 1 1 . ~ 2 2 ~ 5",
+    sometimes (ply 2)
+      $ sometimes (# up "[5|-7]")
+      $ n "1 3 1 3 6 . 5 2 5 3 2",
+    n "[2, 5]*3 [3, 6]*3"
+  ]
+  # s "demung"
+  # legato 1.1
+  # gain (range 0.90 1.00 $ slow 12 sine)
+  # pan "[0.3 0.7]*6"
+
+
+-- Use select?
+d9
+  $ sometimes (# squiz 2.0)  ------------------------
+  $ select (segment (1) rand) [
+    n "2 6 1 2",
+    n "6 5 6 6" # up "0 0 0 4",
+    n "[2, 6] ~ ~ ~",
+    n "6 6 6 6"  -- ?? not happening
+    ]
+  # s "peking"
+  # gain 1.0
+
+
+
+-- good good good.
+do
+  d4 $ silence
+  d5 $ silence
+  d6 $ silence
+  d7 $ silence
+  d10 $ silence
+  d1
+    $ juxBy 0.8 (rev)
+    $ often ((# distort 2.0) . (|- gain 0.6))
+    $ superimpose (# up "12")
+    $ often (# up "[-12,-7]")  -- add (3)
+    -- $ s "ocean:3*[4|6|8|12]"
+    $ s "ocean:3*[4|6|8]"
+    # legato 0.9
+    # grain (range 0.0 0.99 rand) 0.2  -- add (1)
+    # gain (range 1.3 1.6 $ slow 8 sine)
+  d6
+    $ outside 4 (juxBy 0.8 rev)
+    $ degradeBy 0.2
+    $ slow 8
+    $ sometimes ((# distort 4.0) . (# gain 0.8))  -- First
+    $ n (fast 4 $ scramble 8 $ run 8)
+    # s "kendhang"
+    # pan (range 0.2 0.8 $ rand)
+  d4
+    $ slow 4
+    $ inside 2 (shuffle 4)
+    $ n "3 2 3 3 . 1"
+    # up "0 0 5 3 . 0"
+    # s "[slenthem, sslenthem]"
+    # gain 0.93
+    # legato 1.0
+    # squiz 2.0
+
+
+do
+  bpm 120
+  d1
+    $ sometimes ((# distort 2.0) . (|- gain 0.7))
+    $ juxBy 0.8 (rev)
+    $ superimpose (# up "12")
+    $ often (# up "[-12,-7]")  -- add (3)
+    $ s "ocean:3*[4|6|8]"
+    # legato 0.9
+    # grain (range 0.0 0.99 rand) 0.2  -- add (1)
+    # gain (range 1.3 1.6 $ slow 8 sine)
+  d6
+    $ outside 4 (juxBy 0.8 rev)
+    $ degradeBy 0.2
+    $ slow 8
+    $ n (fast 4 $ scramble 8 $ run 8)
+    # s "kendhang"
+    # pan (range 0.2 0.8 $ rand)
+  -- TODO: maybe switch gong
+  d2
+    $ slow 4
+    $ (superimpose ((# squiz 2.0) . (# gain 0.8))) ---------------------------
+    -- $ s "sgong:1 gong:4"
+    $ s "sgong:1 sgong:1"
+    # up "-6 0"
+    # room 1.0
+    # grain 0.05 2.0
+    # gain 0.9
+    # legato 1.0
+  d3
+    $ slow 2 $ n "0 0 0 . 0 0"
+    # s "KETHUK"
+    # legato 1.0
+    # gain 1.35
+    # pan (range 0.3 0.7 $ slow 7 sine)
+  d4
+    $ slow 2
+    $ echo 8 (1/8) 0.88
+    $ n "<[1,3] [2,5]>"
+    # s "saron"
+    # legato 1.0
+    # gain 0.9
+    # squiz "[2]*16"
+
+
+
+do
+  bpm 80
+  d6 $ silence
+  d4 $ silence
+  d10 $ silence
+  d3
+    $ n "0 0"
+    # s "KETHUK"
+    # legato 1.0
+    # gain (range 0.85 1.25 $ slow 8 sine)
+    # pan (range 0.3 0.7 $ slow 7 sine)
+  d1
+    $ always ((# distort 2.0) . (|- gain 0.7))
+    $ juxBy 0.8 (rev)
+    $ superimpose (# up "12")
+    $ often (# up "[-12,-7]")  -- add (3)
+    -- $ s "ocean:3*[4|6|8|12]"
+    $ s "ocean:3*[2|3|4]"
+    # legato 1.2
+    # grain (range 0.0 0.99 rand) 0.2  -- add (1)
+    # gain (range 1.3 1.45 $ slow 8 sine)
+  d2
+    $ slow 4
+    $ (superimpose ((# squiz 2.0) . (# gain 0.8))) ---------------------------
+    $ s "sgong:1 sgong:1"
+    # up "-6 0"
+    # room 1.0
+    # grain 0.05 2.0
+    # gain 0.85
+    # legato 1.0
+
+
+xfade 9 $ silence
+
+
+
+
+do
+  d1 $ silence
+  once
+    $ superimpose (# up "12")
+    $ s "ocean:3"
+    # grain (range 0.0 0.50 rand) 0.20  -- add (1)
+    # distort 2.0
+    # gain 0.6
+    # pan 0.2
+    # legato 4.1
+  once
+    $ superimpose (# up "12")
+    $ s "ocean:3"
+    # grain (range 0.0 0.50 rand) 0.20  -- add (1)
+    # distort 2.0
+    # gain 0.6
+    # pan 0.8
+    # legato 4.1
+  d2
+    $ slow 4
+    $ (superimpose ((# squiz 2.0) . (# gain 0.6))) ---------------------------
+    -- $ s "sgong:1 gong:4"
+    $ s "sgong:1"
+    # up "-6 0"
+    # room 1.0
+    # grain 0.05 2.0
+    # gain 0.8
+    # legato 1.0
+  xfadeIn 3 5 $ silence

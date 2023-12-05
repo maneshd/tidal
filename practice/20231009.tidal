@@ -1,0 +1,45 @@
+bpm x = do setcps (x / 60 / 4)
+
+bpm 90
+
+
+d1
+  $ off (1/8) ((|+ up "[2|3] [4|5] [7|8] [11|12]" ) . (|- gain 0.1))
+  $ superimpose (|+ up "<7 7 9 5>")
+  $ echo 4 (1/4) 0.9
+  $ n "<1 3 2 1>"
+  # s "sslenthem"
+  # gain 0.9
+  # legato 1.0
+
+
+
+d3
+$ sometimes (ply 2)
+$ mask (scramble 8 $ "1 0 1 0 1 1 1 1")
+$ loopFirst
+$ n (scramble 8 $ run 8)
+# s "kendhang"
+
+
+d5
+$ slow 2
+$ superimpose (|+ up 5)
+$ s "gong:6"
+
+
+
+once $ s "ocean:3"
+
+
+d2
+$ juxBy 0.8 (rev)
+-- $ sometimes (ply "[2|4|8]*16")
+$ often (# up "[5|6]")  --
+$ often (# up "[-12,-7]")  --
+$ superimpose (# up "12")
+-- $ rarely ((# distort 0.1) . (|- gain 0.3))
+$ s "ocean:3*[16]"
+# legato 0.9
+# grain (range 0.0 0.99 rand) 0.2
+-- # gain (range 1.1 1.4 $ slow 8 sine)

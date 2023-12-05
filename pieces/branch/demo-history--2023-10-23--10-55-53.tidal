@@ -1,0 +1,63 @@
+-- Instrument 1
+-- Version 0
+d1
+$ n "c a f [e|g]"
+# sound "supermandolin"
+
+
+-- Version 1
+d1
+$ off (1/12) (|+ up "[5|7]")
+$ n "c a f [e|g]"
+# sound "supermandolin"
+
+
+-- Version 2
+d1
+$ off (1/12) (|+ up "[5|7]")
+$ off (1/12) (|+ up "[5|7]")
+$ n "c a f [e|g]"
+# sound "supermandolin"
+
+
+-- Version 3
+d1
+$ sometimes (# octave "[4|6]")
+$ off (1/12) (|+ up "[5|7]")
+$ off (1/12) (|+ up "[5|7]")
+$ n "c a f [e|g]"
+# sound "supermandolin"
+
+
+-- Version 4
+d1
+$ sometimes (# octave "[4|5]")
+$ off (1/12) (|+ up "[5|7]")
+$ off (1/12) (|+ up "[5|7]")
+$ n "c a f [e|g]"
+# sound "supermandolin"
+
+
+-- Version 5
+-- Tagged Green
+d1
+$ off (1/12) (|+ up "[5|12]")
+$ n "c a f [e|g]"
+# sound "supermandolin"
+
+
+
+-- Instrument 2
+-- Version 0
+d2
+$ slow 2
+$ s "bd . hc ~!6 bd . bd bd ~ ~ . hc ~!6 bd?"
+
+
+-- Version 1
+d2
+$ slow 4
+$ s "bd . hc ~!6 bd . bd bd ~ ~ . hc ~!6 bd?"
+
+
+
