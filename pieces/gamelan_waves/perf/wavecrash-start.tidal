@@ -1,4 +1,3 @@
-
 -- Gamelan samples courtesy of tedthetrumpet (https://github.com/tedthetrumpet/testpage/tree/master/nmsamples)
 
 bpm x = do setcps (x / 60 / 4)
